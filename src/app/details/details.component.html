@@ -1,0 +1,35 @@
+<div class="movies-details-container">
+    <div class="spinner-container" *ngIf="isLoading">
+        <mat-spinner *ngIf="isLoading"></mat-spinner>
+    </div>
+
+    <div class="movie-details" *ngIf="movie; else noData">
+        <mat-card class="movie-card">
+            <mat-card-header>
+                <mat-card-title class="movie-title">{{movie.name}}</mat-card-title>
+            </mat-card-header>
+            <img mat-card-image src="assets/images/covers/{{movie.img}}" alt="Photo of a Shiba Inu">
+            <mat-card-content>
+                <p>
+                    {{movie.description}}
+                </p>
+                <p class="movie-info">
+                    <mat-icon>movie</mat-icon> {{movie.genres.join(', ')}}
+                </p>
+                <p class="movie-info">
+                    <mat-icon>star</mat-icon> {{movie.rate}}
+                </p>
+                <p class="movie-info">
+                    <mat-icon>timer</mat-icon> {{movie.length}}
+                </p>
+            </mat-card-content>
+        </mat-card>
+    </div>
+
+    <ng-template #noData>
+        <h1>
+            <mat-icon>error</mat-icon>
+            No Matched Movie
+        </h1>
+    </ng-template>
+</div>

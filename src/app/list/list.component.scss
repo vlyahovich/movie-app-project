@@ -1,0 +1,52 @@
+@import "../vars";
+
+.movies-list {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 10px;
+
+    .movies-item {
+        width: 18%;
+        margin: 0 1% 2%;
+    
+        a {
+            text-decoration: none;
+        }
+    }
+
+    .movie-card {
+        height: 100%;
+        box-sizing: border-box;
+
+        .mat-card-content {
+            font-weight: 300;
+            font-size: 16px;
+        }
+    }
+}
+
+@media #{$lgScreen} {
+    .movies-list {
+        .movies-item {
+            width: 31.33%;
+        }
+    }
+}
+
+@media #{$mdScreen} {
+    .movies-list {
+        .movies-item {
+            width: 48%;
+        }
+    }
+}
+
+@media #{$smScreen} {
+    .movies-list {
+        .movies-item {
+            width: 100%;
+            margin-left: 0;
+            margin-right: 0;
+        }
+    }
+}

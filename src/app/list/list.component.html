@@ -1,0 +1,25 @@
+<div class="movies-list-container">
+    <div class="spinner-container" *ngIf="isLoading">
+        <mat-spinner *ngIf="isLoading"></mat-spinner>
+    </div>
+
+    <div class="movies-list" *ngIf="moviesLength > 0; else noData" [@itemTransition]="moviesLength">
+        <div class="movies-item" *ngFor="let movie of movies">
+            <mat-card class="movie-card">
+                <a [routerLink]="['/list', movie.id]">
+                    <img mat-card-image src="assets/images/covers/{{movie.img}}" alt="{{movie.name}}">
+                </a>
+                <mat-card-content>
+                    {{movie.name}}
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </div>
+
+    <ng-template #noData>
+        <h1>
+            <mat-icon>error</mat-icon>
+            No Results
+        </h1>
+    </ng-template>
+</div>

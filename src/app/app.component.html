@@ -1,20 +1,51 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<mat-toolbar [class]="inited ? 'mat-toolbar inited' : 'mat-toolbar'">
+  <button mat-icon-button (click)="nav.toggle()">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <h1 *ngIf="!isMobileQuery.matches">Movies App Project</h1>
+  <div class="search">
+    <mat-icon matSuffix class="search__icon">search</mat-icon>
+    <div class="search__wrap">
+      <input matInput #search placeholder="Search Movies" (keyup.enter)="searchQuery(search.value); search.value = ''">
+    </div>
+    <button mat-icon-button (click)="search.value = ''" *ngIf="search.value">
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
+</mat-toolbar>
 
+<mat-sidenav-container class="nav-container">
+  <mat-sidenav mode="side" #nav [opened]="isMobileQuery.matches ? 'false': 'true'" [mode]="isMobileQuery.matches ? 'over' : 'side'">
+    <mat-list>
+      <mat-list-item>
+        <a class="side-link" routerLink="list" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" (click)="closeNav()">
+          <mat-icon>home</mat-icon>
+          <span>Home</span>
+        </a>
+      </mat-list-item>
+      <mat-list-item>
+        <a class="side-link" [routerLink]="['genre', 'action']" routerLinkActive="active" (click)="closeNav()">
+          <mat-icon>whatshot</mat-icon>
+          <span>Action</span>
+        </a>
+      </mat-list-item>
+      <mat-list-item>
+        <a class="side-link" [routerLink]="['genre', 'comedy']" routerLinkActive="active" (click)="closeNav()">
+          <mat-icon>sentiment_very_satisfied</mat-icon>
+          <span>Comedy</span>
+        </a>
+      </mat-list-item>
+      <mat-list-item>
+        <a class="side-link" [routerLink]="['genre', 'sport']" routerLinkActive="active" (click)="closeNav()">
+          <mat-icon>motorcycle</mat-icon>
+          <span>Sport</span>
+        </a>
+      </mat-list-item>
+    </mat-list>
+  </mat-sidenav>
+  <mat-sidenav-content class="nav-content">
+    <div class="app-content" [@routerTransition]="getRouterOutletState(outlet)">
+      <router-outlet #outlet="outlet"></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

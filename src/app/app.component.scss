@@ -1,0 +1,120 @@
+@import "./vars";
+
+.app-content {
+    padding: 10px;
+    min-height: calc(100vh - 64px);
+    box-sizing: border-box;
+}
+
+.mat-toolbar {
+    box-shadow: 0 1px 8px rgba(0, 0, 0, .3);
+    position: relative;
+    z-index: 10;
+    transform: translate3d(0, -100px, 0);
+    transition: 0.3s transform ease-in-out;
+
+    &.inited {
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+.mat-sidenav {
+    background: #fafafa;
+
+    .mat-list {
+        transform: translate3d(-200px, 0, 0);
+    }
+
+    &.ng-star-inserted .mat-list {
+        transition: 0.3s transform ease-in-out;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+.mat-sidenav {
+    .mat-icon {
+        margin-right: 10px;
+        vertical-align: middle;
+    }
+
+    .side-link {
+        color: #000;
+        line-height: 48px;
+        text-decoration: none;
+        display: inline-block;
+        min-width: 160px;
+        padding: 0 16px;
+        margin: 0 -16px;
+        transition: background 0.25s ease;
+        outline: none;
+
+        &.active {
+            color: #3f51b5;
+        }
+
+        &:hover {
+            background: rgba(0, 0, 0, 0.1);
+        }
+
+        span {
+            vertical-align: middle;
+        }
+    }
+}
+
+.search {
+    border-radius: 4px;
+    background: rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    margin: 0 12px 0 27px;
+    max-width: 720px;
+    width: 100%;
+
+    &__wrap {
+        width: 100%;
+        height: 48px;
+    }
+
+    &__icon {
+        margin-left: 10px;
+    }
+
+    input {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 0 16px;
+        height: 100%;
+        border: none;
+        outline: none;
+        background: none;
+        color: #000;
+        font-weight: 300;
+
+        &::placeholder {
+            color: #000;
+            opacity: 0.8;
+        }
+
+        &:-ms-input-placeholder {
+            color: #000;
+        }
+    }
+}
+
+/deep/ router-outlet ~ * {
+    position: absolute;
+    width: calc(100% - 20px);
+}
+
+@media #{$mdScreen} {
+    .app-content {
+        min-height: calc(100vh - 56px);
+    }
+
+    .search {
+        &__wrap {
+            height: 40px;
+        }
+    }
+}
