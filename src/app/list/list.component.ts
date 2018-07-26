@@ -1,12 +1,12 @@
 import {Component, OnInit, OnDestroy} from '@angular/core';
 import {ActivatedRoute, ParamMap} from '@angular/router';
-import {moviesServiceProvider, MoviesAPIService} from '../api/movies.service';
+import {MoviesAPIService} from '../api/movies.service';
 import {Movie} from '../api/movie.model';
 import {itemTransition} from '../animations/itemTransition';
 
 @Component({
     selector: 'app-movies-list',
-    providers: [moviesServiceProvider],
+    providers: [MoviesAPIService],
     templateUrl: './list.component.html',
     styleUrls: ['./list.component.scss'],
     animations: [itemTransition()]

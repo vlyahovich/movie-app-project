@@ -1,11 +1,11 @@
 import {Component, OnInit, OnDestroy} from '@angular/core';
 import {ActivatedRoute, ParamMap} from '@angular/router';
-import {moviesServiceProvider, MoviesAPIService} from '../api/movies.service';
+import {MoviesAPIService} from '../api/movies.service';
 import {Movie} from '../api/movie.model';
 
 @Component({
     selector: 'app-movie-details',
-    providers: [moviesServiceProvider],
+    providers: [MoviesAPIService],
     templateUrl: './details.component.html',
     styleUrls: ['./details.component.scss']
 })

@@ -4,7 +4,7 @@ export function routerTransition() {
     return fadeInOut();
 }
 
-function fadeInOut() {
+export function fadeInOut() {
     return trigger('routerTransition', [
         transition('* => *', [
             query(':enter',

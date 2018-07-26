@@ -21,9 +21,3 @@ export class MoviesAPIService {
 
   filterGenre = (genre: GenreType): Promise<Movie[]> => Promise.resolve(movies.filter((m) => m.genres.includes(genre)));
 }
-
-export let moviesServiceProvider = {
-  provide: MoviesAPIService,
-  useFactory: () => new MoviesAPIService(),
-  deps: []
-};

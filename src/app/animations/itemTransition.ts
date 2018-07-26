@@ -4,7 +4,7 @@ export function itemTransition() {
     return flyInOut();
 }
 
-function flyInOut() {
+export function flyInOut() {
     return trigger('itemTransition', [
         transition('* => *', [
 
