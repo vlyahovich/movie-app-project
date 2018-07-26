@@ -5,7 +5,7 @@ import {PageListComponent} from './list/list.component';
 import {PageDetailsComponent} from './details/details.component';
 import {PageNotFoundComponent} from './not-found/not-found.component';
 
-const routes: Routes = [
+export const routes: Routes = [
     {path: 'list', component: PageListComponent},
     {path: 'list/:id', component: PageDetailsComponent},
     {path: 'search/:query', component: PageListComponent},

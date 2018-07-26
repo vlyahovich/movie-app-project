@@ -1,12 +1,7 @@
 import {TestBed, async} from '@angular/core/testing';
 import {RouterTestingModule} from '@angular/router/testing';
 
-import {
-  MatToolbarModule,
-  MatSidenavModule,
-  MatIconModule,
-  MatButtonModule
-} from '@angular/material';
+import {SharedModule} from './shared/shared.module';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 import {AppComponent} from './app.component';
@@ -17,10 +12,7 @@ describe('AppComponent', () => {
       imports: [
         RouterTestingModule,
         BrowserAnimationsModule,
-        MatIconModule,
-        MatButtonModule,
-        MatToolbarModule,
-        MatSidenavModule
+        SharedModule
       ],
       declarations: [
         AppComponent

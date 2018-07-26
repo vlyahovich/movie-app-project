@@ -1,4 +1,9 @@
 import {TestBed, async} from '@angular/core/testing';
+
+import {
+  MatIconModule
+} from '@angular/material';
+
 import {PageNotFoundComponent} from './not-found.component';
 
 describe('AppComponent', () => {
@@ -7,10 +12,13 @@ describe('AppComponent', () => {
       declarations: [
         PageNotFoundComponent
       ],
+      imports: [
+        MatIconModule
+      ]
     }).compileComponents();
   }));
 
-  it('should create the app', async(() => {
+  it('should create the not found page', async(() => {
     const fixture = TestBed.createComponent(PageNotFoundComponent);
     const app = fixture.debugElement.componentInstance;
 
