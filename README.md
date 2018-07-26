@@ -8,7 +8,7 @@ https://blooming-hollows-48208.herokuapp.com/ App running on free dynos so first
 
 ## First launch
 
-Run `npm i`. Then `npm run start` for dev server or `npm run build` then `npm run serve`
+Run `npm i`. Then `npm run start` for dev server or `npm run build` then `npm run serve`. Navigate to `http://localhost:3000/`
 
 ## Development server
 
