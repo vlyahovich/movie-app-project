@@ -1,6 +1,6 @@
 # MovieAppProject
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8.
+Simple Angular 6 movie collection app. Angular material is used for design elements.
 
 ## Heroku App
 
