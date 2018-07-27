@@ -1,6 +1,25 @@
 # MovieAppProject
 
-Simple Angular 6 movie collection app. Angular material is used for design elements.
+Simple Angular 6 movie collection app. Angular material is used for design elements. App is fully responsive and should work correctly on all screens.
+
+Technologies used:
+
+- Angular 6
+- Angular Animations
+- TypeScript
+- Rxjs
+- Sass
+- Unit tests with karma and jasmine
+
+App features:
+
+- List of movies
+- Display movie details
+- Search movie by name or description
+- Filter by popular genres
+- Fancy animations
+- Cool material design
+- Fully responsive
 
 ## Heroku App
 
