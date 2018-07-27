@@ -8,18 +8,18 @@
             <mat-card-header>
                 <mat-card-title class="movie-title">{{movie.name}}</mat-card-title>
             </mat-card-header>
-            <img mat-card-image src="assets/images/covers/{{movie.img}}" alt="Photo of a Shiba Inu">
+            <img mat-card-image src="assets/images/covers/{{movie.img}}" alt="{{movie.name}}">
             <mat-card-content>
                 <p>
                     {{movie.description}}
                 </p>
-                <p class="movie-info">
+                <p class="movie-info movie-info_genres">
                     <mat-icon>movie</mat-icon> {{movie.genres.join(', ')}}
                 </p>
-                <p class="movie-info">
+                <p class="movie-info movie-info_rate">
                     <mat-icon>star</mat-icon> {{movie.rate}}
                 </p>
-                <p class="movie-info">
+                <p class="movie-info movie-info_length">
                     <mat-icon>timer</mat-icon> {{movie.length}}
                 </p>
             </mat-card-content>

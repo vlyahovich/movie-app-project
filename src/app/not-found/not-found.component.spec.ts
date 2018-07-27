@@ -6,7 +6,7 @@ import {
 
 import {PageNotFoundComponent} from './not-found.component';
 
-describe('AppComponent', () => {
+describe('PageNotFoundComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
